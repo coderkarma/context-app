@@ -14,7 +14,7 @@ class Navbar extends Component {
 	static contextType = ThemeContext;
 
 	render() {
-		const { isDarkMode } = this.context;
+		const { isDarkMode, toggleTheme } = this.context;
 		const { classes } = this.props;
 		return (
 			<AppBar
@@ -30,7 +30,7 @@ class Navbar extends Component {
 						color='inherit'>
 						App Title
 					</Typography>
-					<Switch />
+					<Switch onChange={toggleTheme} />
 					<div className={classes.grow} />
 					<div className={classes.search}>
 						<div className={classes.searchIcon}>
